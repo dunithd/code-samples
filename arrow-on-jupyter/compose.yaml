@@ -1,0 +1,10 @@
+services:
+  jupyter:
+    build:
+      context: .
+    container_name: jupyter
+    ports:
+      - 8888:8888
+    volumes:
+      - ${PWD}:/home/jovyan/work
+    command: start-notebook.py --NotebookApp.token='' --NotebookApp.password=''
